@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { HashRouter, Route } from 'react-router-dom';
 
+import Header from './Header';
 import StreamList from './streams/StreamList';
 import StreamCreate from './streams/StreamCreate';
 import StreamEdit from './streams/StreamEdit';
@@ -11,10 +12,10 @@ import StreamShow from './streams/StreamShow';
 class App extends Component {
   render() {
     return (
-      <>
-        <h1>Header</h1>
+      <div className='ui container'>
         <HashRouter>
           <>
+            <Header />
             <Route path='/' exact component={StreamList} />
             <Route path='/streams/new' exact component={StreamCreate} />
             <Route path='/streams/edit' exact component={StreamEdit} />
@@ -22,7 +23,7 @@ class App extends Component {
             <Route path='/streams/show' exact component={StreamShow} />
           </>
         </HashRouter>
-      </>
+      </div>
     );
   }
 }
